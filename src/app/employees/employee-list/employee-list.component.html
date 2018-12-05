@@ -1,0 +1,35 @@
+<h6 class="text-center">Registered book</h6><br/>
+<div class="row">
+  <input type="text" name="booktitle" #booktitle value="searchtitle" class="form-control" (input)="onkey(booktitle.value)">
+   
+</div>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>ISBN</th>
+      <th>Authors</th>
+      <th>publisher</th>
+      <th>img</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+  <tr *ngFor="let employee of employeeList">
+      <td>{{employee.name}}</td>
+      <td>{{employee.ISBN}}</td>
+      <td>{{employee.Authers}}</td>
+      <td>{{employee.publisher}}</td>
+      <td>{{employee.imgurl}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(employee)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(employee.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+  </tbody>
+</table>
